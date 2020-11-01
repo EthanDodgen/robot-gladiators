@@ -20,6 +20,7 @@ var enemyAttack = 12;
 //GAME
 var playerName = window.prompt("What is your robots's name?");
 
+
 var fight = function(enemyName) {
     // repeat and execute as long as the enemy-robot is alive
     while(enemyHealth > 0) {
@@ -69,14 +70,18 @@ var fight = function(enemyName) {
             
             }
         }
+    }
 };
 
-for(var i = 0; i < enemyNames.length; i++) {
-    fight(enemyNames[i]);
-  }
+for (var i = 0; i < enemyNames.length; i++) {
+    var pickedEnemyName = enemyNames[i];
+    enemyHealth = 50;
+    fight(pickedEnemyName);
+}
 
 for(var i = 0; i < enemyNames.length; i++) {
     console.log(enemyNames[i]);
     console.log(i);
     console.log(enemyNames[i] + " is at " + i + " index");
   }
+
